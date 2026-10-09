@@ -2,17 +2,17 @@
 
 ## 1. Ficha del juego
 
-| | |
-|---|---|
-| Título | |
-| Autor/a | |
-| Género | |
-| 2D / 3D | |
+| Campo | Detalle |
+|-------|---------|
+| Título | Resco |
+| Autor/a | Javier Búa Martínez |
+| Género | Tower Defense / Estrategia / Habilidad |
+| 2D / 3D | 2D |
 | Plataformas | Windows |
-| Versión de Unity y pipeline | Unity 6 - URP |
-| Público objetivo y PEGI | |
-| Duración de una partida | |
-| Repositorio | |
+| Versión de Unity y pipeline | Unity 6 - URP (Universal 2D) |
+| Público objetivo y PEGI | Todos los públicos, PEGI 7 |
+| Duración de una partida | 10 - 15 min / 3 - 5 min por nivel |
+| Repositorio | https://github.com/Javiresco3/PMDM-Proyecto-Unity |
 | Página de itch.io | |
 
 ## 2. Concepto
