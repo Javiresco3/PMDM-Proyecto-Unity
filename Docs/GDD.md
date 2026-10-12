@@ -4,7 +4,7 @@
 
 | Campo | Detalle |
 |-------|---------|
-| Título | Resco |
+| Título | Resc |
 | Autor/a | Javier Búa Martínez |
 | Género | Tower Defense / Estrategia / Habilidad |
 | 2D / 3D | 2D |
@@ -18,20 +18,33 @@
 ## 2. Concepto
 
 ### Resumen
+Resc es un videojuego estilo *Tower Defense* en 2D con vista cenital donde el jugador protege un altar arcano frente a oleadas de criaturas. La generación de maná no depende solo de derrotar enemigos, sino de hacer runas bajo presión de tiempo.
 
 ### Pilares de diseño
+1. **Doble foco táctico:** Coordinar el posicionamiento estratégico de las defensas en el mapa mientras se resuelven secuencias rúnicas para mantener el flujo constante de maná.
+2. **Respuesta inmediata (Game Feel):** Priorizar que cada acción ofrezca una respuesta audiovisual clara y satisfactoria.
+3. **Progresión escalonada:** Introducir mecánicas, torres y comportamientos de enemigos de forma gradual nivel a nivel, garantizando una curva de aprendizaje justa.
+4. **Accesibilidad en los controles:** Mantener una interacción limpia e intuitiva mediante ratón o teclado para evitar frustración mecánica.
 
 ### Referencias
+* **Bloons TD:** La perspectiva cenital bidimensional, el desplazamiento de enemigos a lo largo de rutas predefinidas y la colocación estratégica de defensas con áreas de alcance delimitadas.
+* **Runeomicon:** La temática mágica y la mecánica de realizar runas bajo presión constante.
 
 ### Qué lo hace diferente
+Elimina los tiempos muertos típicos del género *Tower Defense*. En lugar de esperar a que se acumulen recursos, el jugador participa activamente: cuantas más secuencias rúnicas complete, más maná obtendrá para desplegar nuevas torres, aplicar mejoras o desatar habilidades de control de masas.
+
+---
 
 ## 3. Historia y ambientación
 
 ### Premisa
+En las ruinas olvidadas del Valle de Resc yace un monolito arcano que mantiene sellada la energía elemental de la región. Una corrupción subterránea ha despertado, manifestándose como oleadas de criaturas que marchan decididas a quebrar el núcleo y consumir su poder residual.
 
 ### Protagonista
+El jugador toma el papel del Custodio de Resc, una entidad mística ligada al altar que canaliza runas arcanas desde su santuario para invocar centinelas y elementales que frenen la invasión.
 
 ### Cómo se cuenta la historia
+La narrativa se integra mediante breves cuadros introductorios de texto antes de iniciar cada nivel, la evolución estética de los escenarios y los mensajes contextuales al alcanzar las pantallas de victoria y derrota.
 
 ## 4. Jugabilidad
 
