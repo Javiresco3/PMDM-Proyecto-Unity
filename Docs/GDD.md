@@ -195,6 +195,22 @@ Defender el monolito arcano situado al final del sendero evitando que las criatu
 
 ## 16. Diario de desarrollo
 
+### 2026-10-09
+* **Qué se ha hecho:**
+Creacion del repositorio unido a Unity y de la ficha de juego.
+* **Problemas surgidos:**
+Me costo unir Unity con Github en un repositorio.
+* **Decisiones de diseño:**
+Ninguna.
+
+### 2026-10-12
+* **Qué se ha hecho:**
+Se hace los puntos; concepto, historia y ambientación, jugabilidad y mecánicas.
+* **Problemas surgidos:**
+Ninguno.
+* **Decisiones de diseño:**
+Se adopta un modelo de Tower Defense 2D cenital (estilo Bloons) con un sistema de resolución de secuencias rúnicas para acelerar la generación de maná.
+
 ### AAAA-MM-DD
 * **Qué se ha hecho:**
 * **Problemas surgidos:**
