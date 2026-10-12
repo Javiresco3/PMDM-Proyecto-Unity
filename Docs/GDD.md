@@ -165,12 +165,19 @@ Defender el monolito arcano situado al final del sendero evitando que las criatu
 ## 14. Declaración de uso de IA
 
 ### Herramientas utilizadas
+* **Gemini (Google):** Asistente utilizado como apoyo de redacción, estructuración documental y soporte técnico puntual.
 
 ### Áreas de uso
+* **Redacción y formalización del GDD:** Apoyo en la estructuración de la documentación y en la redacción formal de los conceptos, mecánicas y apartados de diseño definidos por el autor.
+* **Código (en desarrollo):** A medida que se desarrollen los scripts del juego, se registrará aquí de forma detallada cada script o algoritmo en el que se haya utilizado asistencia de IA para su generación, corrección o depuración.
 
 ### Modificaciones y adaptaciones
+* Todas las propuestas de redacción y estructuración han sido revisadas, filtradas y validadas por el autor para asegurar que reflejan fielmente el diseño previsto.
+* Todo el código que se apoye en IA se estudiará y comprenderá en su totalidad antes de incorporarse al proyecto, garantizando la capacidad de defenderlo y modificarlo en clase.
 
 ### Confirmación de recursos no generados por IA
+* Se confirma que **ningún recurso gráfico, sprite, modelo 3D, textura, música, efecto de sonido ni efecto visual** ha sido generado mediante herramientas de inteligencia artificial generativa.
+* Todos los assets de terceros empleados provendrán de repositorios y autores que garanticen no usar IA en su creación, y contarán con sus licencias correspondientes declaradas en la sección 13.
 
 ## 15. Aspectos técnicos
 
