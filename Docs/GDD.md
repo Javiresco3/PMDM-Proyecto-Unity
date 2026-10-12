@@ -49,18 +49,35 @@ La narrativa se integra mediante breves cuadros introductorios de texto antes de
 ## 4. Jugabilidad
 
 ### Objetivo
+Defender el monolito arcano situado al final del sendero evitando que las criaturas enemigas agoten su salud a lo largo de las distintas oleadas de cada nivel.
 
 ### Bucle de juego
+1. **Analizar la ruta:** Identificar por dónde avanzarán los enemigos en la oleada actual.
+2. **Canalizar maná:** Completar patrones de runas en el altar para generar maná rápidamente.
+3. **Desplegar y mejorar defensas:** Colocar torretas/criaturas en las casillas adyacentes al camino y mejorar sus atributos.
+4. **Intervención directa:** Utilizar habilidades activas de control o daño cuando la línea de defensa se vea desbordada o en situaciones estratégicas.
+5. **Fin de oleada:** Evaluar bajas, recoger maná residual y preparar la siguiente fase.
 
 ### Condiciones de victoria y derrota
+* **Victoria:** Completar con éxito todas las oleadas del nivel manteniendo al menos 1 punto de vida en el monolito.
+* **Derrota:** Si la salud del monolito llega a 0 tras filtrarse demasiados enemigos.
 
 ### Progresión
+* **Nivel 1:** Ruta simple, enemigos estándar lentos, runas simples y torre/criatura elemental básica.
+* **Nivel 2:** Ruta con bifurcación, enemigos ágiles/resistentes, runas de complejidad media, desbloqueo de torres/criaturas y habilidad activa de área.
+* **Nivel 3:** Múltiples rutas, oleada con jefe final de alto aguante, runas de complejidad alta y torres/criaturas nuevas.
+
+---
 
 ## 5. Mecánicas
 
 | Mecánica | Descripción | Control | Nivel en el que aparece |
 |----------|-------------|---------|-------------------------|
-| | | | |
+| **Invocación de defensas** | Colocar estructuras defensivas en nodos designados del mapa gastando maná. | Clic izquierdo | Nivel 1 |
+| **Forja de Runas** | Resolver runas en un panel interactivo para obtener maná inmediato. | Por definir (Q-W-E-R / Clic ratón) | Nivel 1 |
+| **Mejora de atributos** | Incrementar el daño, alcance o cadencia de una torre existente pagando maná. | Clic sobre torre + interfaz | Nivel 2 |
+| **Habilidad activa: Nova de Hielo** | Congela y ralentiza a los enemigos en un radio determinado durante unos segundos. | Tecla 1 + Clic en mapa | Nivel 2 |
+| **Habilidad activa: Tormenta Ígnea** | Daño masivo de fuego en área para despejar acumulaciones de enemigos críticos. | Tecla 2 + Clic en mapa | Nivel 3 |
 
 ## 6. Controles
 
