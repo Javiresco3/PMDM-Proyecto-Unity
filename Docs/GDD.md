@@ -27,8 +27,8 @@ Resc es un videojuego estilo *Tower Defense* en 2D con vista cenital donde el ju
 4. **Accesibilidad en los controles:** Mantener una interacción limpia e intuitiva mediante ratón o teclado para evitar frustración mecánica.
 
 ### Referencias
-* **Bloons TD:** La perspectiva cenital bidimensional, el desplazamiento de enemigos a lo largo de rutas predefinidas y la colocación estratégica de defensas con áreas de alcance delimitadas.
-* **Runeomicon:** La temática mágica y la mecánica de realizar runas bajo presión constante.
+* **Bloons TD:** La perspectiva cenital bidimensional, el desplazamiento de enemigos a lo largo de rutas predefinidas y la colocación estratégica de defensas en nodos con áreas de alcance delimitadas.
+* **Runeomicon:** La ambientación arcana y la mecánica de resolver runas bajo presión de tiempo para obtener recursos mágicos.
 
 ### Qué lo hace diferente
 Elimina los tiempos muertos típicos del género *Tower Defense*. En lugar de esperar a que se acumulen recursos, el jugador participa activamente: cuantas más secuencias rúnicas complete, más maná obtendrá para desplegar nuevas torres, aplicar mejoras o desatar habilidades de control de masas.
@@ -38,23 +38,23 @@ Elimina los tiempos muertos típicos del género *Tower Defense*. En lugar de es
 ## 3. Historia y ambientación
 
 ### Premisa
-En las ruinas olvidadas del Valle de Resc yace un monolito arcano que mantiene sellada la energía elemental de la región. Una corrupción subterránea ha despertado, manifestándose como oleadas de criaturas que marchan decididas a quebrar el núcleo y consumir su poder residual.
+Tras siglos de confinamiento, un antiguo hechicero oscuro resurge en las ruinas del Valle de Resc para reclamar su dominio mediante el poder de un monolito arcano. Al advertir su despertar, los reinos humanos organizan expediciones militares inmediatas para marchar sobre el santuario y destruir el obelisco antes de que recupere su fuerza total.
 
 ### Protagonista
-El jugador toma el papel del Custodio de Resc, una entidad mística ligada al altar que canaliza runas arcanas desde su santuario para invocar centinelas y elementales que frenen la invasión.
+El jugador encarna al hechicero oscuro resurgido. Desde su altar, canaliza energía rúnica para invocar esbirros, espectros y tótems sombríos que aniquilan a las tropas humanas invasoras a lo largo del sendero.
 
 ### Cómo se cuenta la historia
-La narrativa se integra mediante breves cuadros introductorios de texto antes de iniciar cada nivel, la evolución estética de los escenarios y los mensajes contextuales al alcanzar las pantallas de victoria y derrota.
+A través de breves textos introductorios al inicio de cada nivel que contextualizan el avance del ejército humano, la degradación visual del entorno hacia parajes cada vez más corruptos y pantallas de victoria o derrota con mensajes narrativos.
 
 ## 4. Jugabilidad
 
 ### Objetivo
-Defender el monolito arcano situado al final del sendero evitando que las criaturas enemigas agoten su salud a lo largo de las distintas oleadas de cada nivel.
+Defender el monolito arcano situado al final del sendero evitando que las tropas invasoras agoten su salud a lo largo de las distintas oleadas de cada nivel.
 
 ### Bucle de juego
 1. **Analizar la ruta:** Identificar por dónde avanzarán los enemigos en la oleada actual.
 2. **Canalizar maná:** Completar patrones de runas en el altar para generar maná rápidamente.
-3. **Desplegar y mejorar defensas:** Colocar torretas/criaturas en las casillas adyacentes al camino y mejorar sus atributos.
+3. **Desplegar y mejorar defensas:** Invocar esbirros y estructuras en las casillas adyacentes al camino y mejorar sus atributos.
 4. **Intervención directa:** Utilizar habilidades activas de control o daño cuando la línea de defensa se vea desbordada o en situaciones estratégicas.
 5. **Fin de oleada:** Evaluar bajas, recoger maná residual y preparar la siguiente fase.
 
@@ -63,9 +63,9 @@ Defender el monolito arcano situado al final del sendero evitando que las criatu
 * **Derrota:** Si la salud del monolito llega a 0 tras filtrarse demasiados enemigos.
 
 ### Progresión
-* **Nivel 1:** Ruta simple, enemigos estándar lentos, runas simples y torre/criatura elemental básica.
-* **Nivel 2:** Ruta con bifurcación, enemigos ágiles/resistentes, runas de complejidad media, desbloqueo de torres/criaturas y habilidad activa de área.
-* **Nivel 3:** Múltiples rutas, oleada con jefe final de alto aguante, runas de complejidad alta y torres/criaturas nuevas.
+* **Nivel 1:** Sendero de pradera abierta, invasores humanos básicos (aldeanos y milicia ligera), runas simples y esbirro oscuro básico de proyectil rápido.
+* **Nivel 2:** Caminos bifurcados con terreno corrupto, tropas humanas con escudos y armaduras intermedias, runas de complejidad media, invocación de ralentización y habilidad activa de área (Nova de Hielo).
+* **Nivel 3:** Múltiples accesos al monolito, asalto de la caballería pesada y el Comandante Real (jefe final), runas complejas y esbirros de daño masivo en área.
 
 ---
 
@@ -73,11 +73,11 @@ Defender el monolito arcano situado al final del sendero evitando que las criatu
 
 | Mecánica | Descripción | Control | Nivel en el que aparece |
 |----------|-------------|---------|-------------------------|
-| **Invocación de defensas** | Colocar estructuras defensivas en nodos designados del mapa gastando maná. | Clic izquierdo | Nivel 1 |
-| **Forja de Runas** | Resolver runas en un panel interactivo para obtener maná inmediato. | Por definir (Q-W-E-R / Clic ratón) | Nivel 1 |
-| **Mejora de atributos** | Incrementar el daño, alcance o cadencia de una torre existente pagando maná. | Clic sobre torre + interfaz | Nivel 2 |
-| **Habilidad activa: Nova de Hielo** | Congela y ralentiza a los enemigos en un radio determinado durante unos segundos. | Tecla 1 + Clic en mapa | Nivel 2 |
-| **Habilidad activa: Tormenta Ígnea** | Daño masivo de fuego en área para despejar acumulaciones de enemigos críticos. | Tecla 2 + Clic en mapa | Nivel 3 |
+| **Invocación de esbirros oscuros** | Invocar criaturas y tótems defensivos en nodos del mapa gastando maná. | Clic izquierdo | Nivel 1 |
+| **Forja de Runas** | Resolver secuencias de runas en un panel interactivo para generar maná inmediato. | Por definir (Q-W-E-R / Clic ratón) | Nivel 1 |
+| **Mejora de atributos** | Incrementar daño, alcance o cadencia de una criatura invocada pagando maná. | Clic sobre unidad + interfaz | Nivel 2 |
+| **Habilidad activa: Nova de Hielo** | Congela y ralentiza a los enemigos en un radio determinado durante unos segundos. | Tecla 1 o Clic HUD + Clic en mapa | Nivel 2 |
+| **Habilidad activa: Tormenta Ígnea** | Daño masivo de fuego en área para despejar acumulaciones críticas de tropas. | Tecla 2 o Clic HUD + Clic en mapa | Nivel 3 |
 
 ## 6. Controles
 
@@ -160,7 +160,13 @@ Defender el monolito arcano situado al final del sendero evitando que las criatu
 
 | Recurso | Tipo | Autor | Licencia | Enlace | Dónde se usa |
 |---------|------|-------|----------|--------|--------------|
-| | | | | | |
+| **Free RPG Tileset 16x16** | Gráfico (Tileset 2D) | Pipoya | Gratuito (Uso libre / TOS Pipoya) | https://pipoya.itch.io/free-rpg-tileset-16x16 | Terrenos abiertos, caminos y vegetación en los niveles |
+| **16x16 Free NPC Pack** | Gráfico (Sprites 2D) | Superdark | Gratuito / CC0 | https://superdark.itch.io/16x16-free-npc-pack | Tropas humanas invasoras (aldeanos, soldados, caballeros) |
+| **Enchanted Forest Characters** | Gráfico (Sprites 2D) | Superdark | Gratuito / CC0 | https://superdark.itch.io/enchanted-forest-characters | Comandante / Caballero dorado (Jefe final humano) |
+| **Microfantasy** | Gráfico (Sprites 2D) | 0x72 | CC0 (Dominio Público) | https://0x72.itch.io/microfantasy | Esbirros oscuros invocados como defensas del jugador |
+| **16x16 Dungeon Tileset II** | Gráfico (Sprites 2D) | 0x72 | CC0 (Dominio Público) | https://0x72.itch.io/dungeontileset-ii | Monolito arcano central y criaturas adicionales |
+| **Pixel Magic Sprite Effects** | Gráfico (VFX 2D) | FoozleCC | Gratuito (Uso en juegos) | https://foozlecc.itch.io/pixel-magic-sprite-effects | Proyectiles elementales, magias de runas e impactos |
+| **6 Tracks Music Pack** | Audio (Música) | Alkakrab | Gratuito con atribución | https://alkakrab.itch.io/6tracksmusipack | Música de fondo en niveles y menús |
 
 ## 14. Declaración de uso de IA
 
@@ -196,20 +202,19 @@ Defender el monolito arcano situado al final del sendero evitando que las criatu
 ## 16. Diario de desarrollo
 
 ### 2026-10-09
-* **Qué se ha hecho:**
-Creacion del repositorio unido a Unity y de la ficha de juego.
-* **Problemas surgidos:**
-Me costo unir Unity con Github en un repositorio.
-* **Decisiones de diseño:**
-Ninguna.
+* **Qué se ha hecho:** Creación del repositorio unido a Unity y de la ficha de juego.
+* **Problemas surgidos:** Me costó unir Unity con GitHub en un repositorio.
+* **Decisiones de diseño:** Ninguna.
 
 ### 2026-10-12
-* **Qué se ha hecho:**
-Se hace los puntos; concepto, historia y ambientación, jugabilidad y mecánicas.
-* **Problemas surgidos:**
-Ninguno.
-* **Decisiones de diseño:**
-Se adopta un modelo de Tower Defense 2D cenital (estilo Bloons) con un sistema de resolución de secuencias rúnicas para acelerar la generación de maná.
+* **Qué se ha hecho:** Se hacen los puntos: concepto, historia y ambientación, jugabilidad y mecánicas.
+* **Problemas surgidos:** Ninguno.
+* **Decisiones de diseño:** Se adopta un modelo de Tower Defense 2D cenital (estilo Bloons) con un sistema de resolución de secuencias rúnicas para acelerar la generación de maná.
+
+### 2026-10-23
+* **Qué se ha hecho:** Selección y auditoría definitiva de los assets visuales y de audio. Actualización del GDD para alinear historia, enemigos humanos y defensas oscuras con los paquetes elegidos.
+* **Problemas surgidos:** Se detectaron incongruencias de perspectiva (mezcla de vista lateral con cenital) en los borradores iniciales de assets; se resolvió unificando todo bajo estándar Top-Down de 16x16 libre de IA.
+* **Decisiones de diseño:** Los mapas serán abiertos mediante el tileset de Pipoya y las defensas serán esbirros oscuros invocados estáticos para reforzar la temática del hechicero frente a los invasores humanos.
 
 ### AAAA-MM-DD
 * **Qué se ha hecho:**
