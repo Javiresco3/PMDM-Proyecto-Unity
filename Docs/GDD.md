@@ -72,20 +72,28 @@ Defender el monolito arcano situado al final del sendero evitando que las tropas
 ## 5. Mecánicas
 
 | Mecánica | Descripción | Control | Nivel en el que aparece |
-|----------|-------------|---------|-------------------------|
+|---|---|---|---|
 | **Invocación de esbirros oscuros** | Invocar criaturas y tótems defensivos en nodos del mapa gastando maná. | Clic izquierdo | Nivel 1 |
-| **Forja de Runas** | Resolver secuencias de runas en un panel interactivo para generar maná inmediato. | Por definir (Q-W-E-R / Clic ratón) | Nivel 1 |
+| **Forja de Runas** | Resolver secuencias rúnicas temporizadas (`Q-W-E-R`) en el panel lateral para generar maná. Un fallo bloquea el panel 2 segundos y cambia la secuencia. La longitud y recompensa aumentan con el nivel. | Teclado (`Q`, `W`, `E`, `R`) | Nivel 1 |
 | **Mejora de atributos** | Incrementar daño, alcance o cadencia de una criatura invocada pagando maná. | Clic sobre unidad + interfaz | Nivel 2 |
 | **Habilidad activa: Nova de Hielo** | Congela y ralentiza a los enemigos en un radio determinado durante unos segundos. | Tecla 1 o Clic HUD + Clic en mapa | Nivel 2 |
 | **Habilidad activa: Tormenta Ígnea** | Daño masivo de fuego en área para despejar acumulaciones críticas de tropas. | Tecla 2 o Clic HUD + Clic en mapa | Nivel 3 |
 
 ## 6. Controles
 
-| Acción | Teclado | Mando |
-|--------|---------|-------|
-| | | |
+## 6. Controles
+
+| Acción | Teclado | Ratón |
+|---|---|---|
+| **Canalizar Runa (Fuego / Hielo / Naturaleza / Arcano)** | `Q`, `W`, `E`, `R` | - |
+| **Seleccionar / Colocar esbirro defensor** | - | Clic izquierdo |
+| **Cancelar colocación / Deseleccionar** | `Escape` | Clic derecho |
+| **Activar Nova de Hielo (Nivel 2)** | `1` | Clic en icono del HUD + Clic en mapa |
+| **Activar Tormenta Ígnea (Nivel 3)** | `2` | Clic en icono del HUD + Clic en mapa |
+| **Pausa / Menú** | `Escape` / `P` | Clic en botón de pausa |
 
 ### Aprendizaje de controles
+En el Nivel 1 se introduce un panel interactivo visible a la derecha con las teclas `Q-W-E-R` grabadas en cada icono rúnico. El jugador aprende de forma pasiva pulsando las teclas indicadas mientras observa cómo aumenta su maná disponible antes de que la primera oleada alcance el sendero.
 
 ## 7. Niveles
 
