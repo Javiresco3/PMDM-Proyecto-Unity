@@ -180,10 +180,12 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 
 ### Herramientas utilizadas
 * **Gemini (Google):** Asistente utilizado como apoyo de redacción, estructuración documental y soporte técnico puntual.
+* **Extensión Continue** (en VS Code) conectada a la API de Google Gemini.
 
 ### Áreas de uso
 * **Redacción y formalización del GDD:** Apoyo en la estructuración de la documentación y en la redacción formal de los conceptos, mecánicas y apartados de diseño definidos por el autor.
 * **Código (en desarrollo):** A medida que se desarrollen los scripts del juego, se registrará aquí de forma detallada cada script o algoritmo en el que se haya utilizado asistencia de IA para su generación, corrección o depuración.
+* **Asistencia de programación en el editor:** generación de estructuras base de scripts, consultas de sintaxis y refactorización guiada bajo las restricciones definidas en AGENTS.md.
 
 ### Modificaciones y adaptaciones
 * Todas las propuestas de redacción y estructuración han sido revisadas, filtradas y validadas por el autor para asegurar que reflejan fielmente el diseño previsto.
@@ -196,7 +198,7 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 ## 15. Aspectos técnicos
 
 ### Estructura del proyecto
-
+Se establece un estándar de formato de código unificado mediante .editorconfig. Las directrices de arquitectura, orden de scripts y restricciones para el desarrollo asistido quedan fijadas en el archivo raíz AGENTS.md.
 ### Arquitectura del código
 
 ### Paquetes de Unity
@@ -223,6 +225,11 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 * **Qué se ha hecho:** Selección y auditoría definitiva de los assets visuales y de audio. Actualización del GDD para alinear historia, enemigos humanos y defensas oscuras con los paquetes elegidos.
 * **Problemas surgidos:** Se detectaron incongruencias de perspectiva (mezcla de vista lateral con cenital) en los borradores iniciales de assets; se resolvió unificando todo bajo estándar Top-Down de 16x16 libre de IA.
 * **Decisiones de diseño:** Los mapas serán abiertos mediante el tileset de Pipoya y las defensas serán esbirros oscuros invocados estáticos para reforzar la temática del hechicero frente a los invasores humanos.
+
+### 2026-10-23
+* **Qué se ha hecho:** Configuración del entorno de desarrollo en Visual Studio Code. Creación de `AGENTS.md` para establecer las directrices de arquitectura y reglas para asistentes de IA, e integración de `.editorconfig` para estandarizar el formato de C#. Configuración de la extensión Continue conectada con la API de Gemini.
+* **Problemas surgidos:** Comprender la gestión de claves de API en entornos de usuario del aula y la delimitación de permisos de la IA en scripts de Unity.
+* **Decisiones de diseño:** Se adopta un flujo de trabajo con asistencia en editor sujeto a revisión estricta de código, prohibición de modificar archivos `.meta` externamente y commits previos de respaldo en Git.
 
 ### AAAA-MM-DD
 * **Qué se ha hecho:**
