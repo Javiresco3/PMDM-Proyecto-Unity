@@ -1,0 +1,16 @@
+name: revisar
+description: Revisa uno o varios scripts de Unity en busca de errores habituales antes de hacer commit.
+---
+
+No modifiques ningún archivo: solo analiza e informa.
+Revisa el script indicado y comprueba si contiene estos fallos habituales de Unity:
+- Uso de GetComponent, Find o LINQ dentro de Update o FixedUpdate.
+- Movimiento en Update sin multiplicar por Time.deltaTime.
+- Modificación de físicas/velocidades de Rigidbody2D fuera de FixedUpdate.
+- Uso de operadores ?. o ?? sobre objetos o componentes de Unity (rompen la sobrecarga de null de UnityEngine.Object).
+- Destroy(this) en lugar de Destroy(gameObject).
+- Suscripciones a eventos C# (+=) que no se desuscriben (-=) en OnDisable u OnDestroy.
+- Referencias del Inspector que no comprueban si son null antes de usarse.
+- Incumplimiento de las reglas fijadas en AGENTS.md.
+
+Indica archivo, línea, por qué es un problema y cómo solucionarlo.
