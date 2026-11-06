@@ -1,0 +1,12 @@
+name: diario
+description: Actualiza el Diario de desarrollo y la declaración de IA del GDD a partir de los últimos cambios.
+---
+
+1. Consulta los commits recientes desde la última fecha registrada en el diario usando git log.
+2. Abre `Docs/GDD.md` y añade una entrada nueva en la sección "16. Diario de desarrollo" con la fecha de hoy (formato AAAA-MM-DD):
+   - **Qué se ha hecho:** resume de forma técnica y concisa los scripts, prefabs y mecánicas programadas hoy según los commits.
+   - **Problemas surgidos:** deja un `TODO: Explicar qué problemas técnicos o bugs se han encontrado hoy.` para que lo rellene el autor.
+   - **Decisiones de diseño:** deja un `TODO: Explicar decisiones de balanceo o jugabilidad tomadas hoy.` para que lo rellene el autor.
+3. Revisa los scripts de C# nuevos o modificados hoy:
+   - Si se ha generado o corregido código con asistencia de IA, añade el nombre del script y su rol en la tabla/lista de la sección "14. Declaración de uso de IA" bajo el apartado de código.
+4. No toques ninguna otra sección del GDD.
