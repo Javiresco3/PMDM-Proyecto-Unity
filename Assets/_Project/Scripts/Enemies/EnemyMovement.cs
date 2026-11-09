@@ -53,4 +53,22 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Permite al Spawner inyectar el camino al instanciar el enemigo en tiempo de ejecución.
+    /// </summary>
+    public void SetPath(WaypointPath path)
+    {
+        targetPath = path;
+        currentWaypointIndex = 0;
+        
+        if (targetPath != null && targetPath.WaypointCount > 0)
+        {
+            currentTarget = targetPath.GetWaypoint(currentWaypointIndex);
+            if (currentTarget != null)
+            {
+                transform.position = currentTarget.position;
+            }
+        }
+    }
 }
