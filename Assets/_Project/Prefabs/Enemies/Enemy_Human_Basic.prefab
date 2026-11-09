@@ -108,3 +108,5 @@ MonoBehaviour:
   targetPath: {fileID: 0}
   moveSpeed: 3
   reachThreshold: 0.05
+  spriteRenderer: {fileID: 5488417848747543298}
+  facesRightByDefault: 1
