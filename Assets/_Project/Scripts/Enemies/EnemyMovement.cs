@@ -7,6 +7,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float reachThreshold = 0.05f;
 
+    [Header("Combate")]
+    [SerializeField] private int damageToBase = 1;
+
     [Header("Visual")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [Tooltip("Marca esta casilla si el sprite original de la textura mira hacia la derecha.")]
@@ -17,7 +20,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        // Caché defensivo en inicialización (nunca en Update)
         if (spriteRenderer == null)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -76,13 +78,24 @@ public class EnemyMovement : MonoBehaviour
 
             if (currentWaypointIndex >= targetPath.WaypointCount)
             {
-                Destroy(gameObject);
+                ReachEnd();
             }
             else
             {
                 currentTarget = targetPath.GetWaypoint(currentWaypointIndex);
             }
         }
+    }
+
+    private void ReachEnd()
+    {
+        // Comprobación explícita de null sin operador '?' (cumple AGENTS.md)
+        if (BaseHealth.Instance != null)
+        {
+            BaseHealth.Instance.TakeDamage(damageToBase);
+        }
+
+        Destroy(gameObject);
     }
 
     private void UpdateFacingDirection()
@@ -94,7 +107,6 @@ public class EnemyMovement : MonoBehaviour
 
         float deltaX = currentTarget.position.x - transform.position.x;
 
-        // Margen mínimo para evitar parpadeos si se mueve puramente en vertical
         if (Mathf.Abs(deltaX) > 0.01f)
         {
             bool movingRight = deltaX > 0f;
