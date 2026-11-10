@@ -6,6 +6,9 @@ public class EnemyHealth : MonoBehaviour
     [Header("Configuración de Vida")]
     [SerializeField] private int maxHealth = 3;
 
+    [Header("Recompensa Económica")]
+    [SerializeField] private int goldReward = 10;
+
     private int currentHealth;
 
     public event Action<int, int> OnHealthChanged;
@@ -35,9 +38,17 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         OnDeath?.Invoke();
+
+        // Comprobación explícita de nulidad sin operador '?.' (cumple con AGENTS.md)
+        if (EconomyManager.Instance != null)
+        {
+            EconomyManager.Instance.AddGold(goldReward);
+        }
+
         Destroy(gameObject);
     }
 
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
+    public int GoldReward => goldReward;
 }
