@@ -211,6 +211,7 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 | `Tower.cs` | Detección perimetral de enemigos en rango mediante `Physics2D.OverlapCircleNonAlloc` (sin asignación de memoria) y control de cadencia de disparo. |
 | `Projectile.cs` | Persecución rectilínea hacia el objetivo asignado y aplicación de daño al colisionar. |
 | `EnemyHealth.cs` | Control de puntos de vida del enemigo, recepción de impactos de proyectiles y destrucción controlada con eventos. |
+| `EnemyHealthBar.cs` | Vinculación reactiva del Slider de salud en espacio de mundo (*World Space*) mediante eventos desacoplados, sin llamadas en bucle `Update`. |
 
 ### Modificaciones y adaptaciones
 
@@ -252,19 +253,19 @@ Se establece un estándar de formato de código unificado mediante .editorconfig
 * **Problemas surgidos:** Ninguno.
 * **Decisiones de diseño:** Se adopta un modelo de Tower Defense 2D cenital (estilo Bloons) con un sistema de resolución de secuencias rúnicas para acelerar la generación de maná.
 
-### 2026-10-23
+### 2026-10-22
 
 * **Qué se ha hecho:** Selección y auditoría definitiva de los assets visuales y de audio. Actualización del GDD para alinear historia, enemigos humanos y defensas oscuras con los paquetes elegidos.
 * **Problemas surgidos:** Se detectaron incongruencias de perspectiva (mezcla de vista lateral con cenital) en los borradores iniciales de assets; se resolvió unificando todo bajo estándar Top-Down de 16x16 libre de IA.
 * **Decisiones de diseño:** Los mapas serán abiertos mediante el tileset de Pipoya y las defensas serán esbirros oscuros invocados estáticos para reforzar la temática del hechicero frente a los invasores humanos.
 
-### 2026-10-22
+### 2026-10-23
 
 * **Qué se ha hecho:** Configuración del entorno de desarrollo en Visual Studio Code. Creación de `AGENTS.md` para establecer las directrices de arquitectura y reglas para asistentes de IA, e integración de `.editorconfig` para estandarizar el formato de C#. Configuración de la extensión Continue conectada con la API de Gemini.
 * **Problemas surgidos:** Comprender la gestión de claves de API en entornos de usuario del aula y la delimitación de permisos de la IA en scripts de Unity.
 * **Decisiones de diseño:** Se adopta un flujo de trabajo con asistencia en editor sujeto a revisión estricta de código, prohibición de modificar archivos `.meta` externamente y commits previos de respaldo en Git.
 
-### 2026-11-10
+### 2026-11-09
 
 * **Qué se ha hecho:**
   * Limpieza estructural del repositorio, consolidación de subcarpetas en `Assets/_Project/` y configuración masiva de assets Pixel Art (PPU 16, Point Filter, sin compresión).
@@ -276,6 +277,16 @@ Se establece un estándar de formato de código unificado mediante .editorconfig
   * Construcción del sistema de defensa básico: `Tower.cs` (detección mediante `Physics2D.OverlapCircleNonAlloc` sin recolección de basura) y `Projectile.cs` (persecución guiada y colisión).
 * **Problemas surgidos:** Ninguno
 * **Decisiones de diseño:** Ninguna
+
+### 2026-11-10
+
+* **Qué se ha hecho:**
+  * Implementación de `EnemyHealthBar.cs` para el control reactivo del estado de salud sobre los enemigos mediante eventos (`OnHealthChanged`), desacoplado de ciclos `Update`.
+  * Creación y configuración de un `Canvas` en modo World Space dentro del prefab `Enemy_Human_Basic`, eliminando componentes no requeridos (`GraphicRaycaster`) para optimizar el rendimiento.
+  * Configuración y depuración visual de un `Slider` para representar la salud: supresión de la textura redondeada por defecto (`UISprite`), corrección de márgenes y desfases (*offsets*) en `Fill Area`, y ajuste de la jerarquía visual del fondo rojo (`Background`) y relleno verde (`Fill`).
+  * Implementación de autoenlace defensivo de componentes y asignación de rangos enteros directos (`minValue = 0`, `maxValue = maxHealth`) para evitar problemas de precisión en decimales.
+* **Problemas surgidos:** Dificultad con la barra de vida para que apareciese como quería.
+* **Decisiones de diseño:** Ninguna.
 
 ### AAAA-MM-DD
 
