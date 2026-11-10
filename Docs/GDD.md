@@ -212,6 +212,8 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 | `Projectile.cs` | Persecución rectilínea hacia el objetivo asignado y aplicación de daño al colisionar. |
 | `EnemyHealth.cs` | Control de puntos de vida del enemigo, recepción de impactos de proyectiles y destrucción controlada con eventos. |
 | `EnemyHealthBar.cs` | Vinculación reactiva del Slider de salud en espacio de mundo (*World Space*) mediante eventos desacoplados, sin llamadas en bucle `Update`. |
+| `EconomyManager.cs` | Gestión centralizada de recursos (oro), validación de transacciones y disparo de eventos de saldo. |
+| `EconomyUI.cs` | Refresco reactivo del contador de oro en la interfaz mediante eventos C#, sin sobrecarga de polling. |
 
 ### Modificaciones y adaptaciones
 
@@ -285,8 +287,11 @@ Se establece un estándar de formato de código unificado mediante .editorconfig
   * Creación y configuración de un `Canvas` en modo World Space dentro del prefab `Enemy_Human_Basic`, eliminando componentes no requeridos (`GraphicRaycaster`) para optimizar el rendimiento.
   * Configuración y depuración visual de un `Slider` para representar la salud: supresión de la textura redondeada por defecto (`UISprite`), corrección de márgenes y desfases (*offsets*) en `Fill Area`, y ajuste de la jerarquía visual del fondo rojo (`Background`) y relleno verde (`Fill`).
   * Implementación de autoenlace defensivo de componentes y asignación de rangos enteros directos (`minValue = 0`, `maxValue = maxHealth`) para evitar problemas de precisión en decimales.
+  * Implementación de `EconomyManager.cs` bajo patrón Singleton para la gestión de recursos (oro), control de transacciones (`CanAfford`, `SpendGold`) y disparo del evento reactivo `OnGoldChanged`.
+  * Modificación de `EnemyHealth.cs` con el campo `goldReward` y llamada a `AddGold` al morir en combate, diferenciando la baja por defensas de la llegada al final del trayecto.
+  * Implementación de `EconomyUI.cs` vinculado a TextMeshPro en el Canvas para la actualización reactiva del contador de oro en base a eventos, sin sobrecarga en `Update`.
 * **Problemas surgidos:** Dificultad con la barra de vida para que apareciese como quería.
-* **Decisiones de diseño:** Ninguna.
+* **Decisiones de diseño:** Los enemigos no otorgan oro al alcanzar el Monolito, únicamente al ser destruidos por las defensas.
 
 ### AAAA-MM-DD
 
