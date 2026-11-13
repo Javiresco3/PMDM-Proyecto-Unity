@@ -218,6 +218,8 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 | `WaveUI.cs` | Actualización basada en eventos del estado de oleadas, cuenta atrás y victoria en TextMeshPro. |
 | `BuildManager.cs` | Singleton gestor de invocación, validación de saldo económico e instanciación de torres sobre casillas disponibles. |
 | `TowerSlot.cs` | Control interactivo de casillas construibles mediante eventos de ratón, bloqueo de ocupación y retroalimentación visual de coste. |
+| `GameManager.cs` | Singleton de flujo de partida (`Playing`, `Victory`, `Defeat`), suscripción a condiciones de victoria/derrota, pausa y reinicio de escena. |
+| `GameEndUI.cs` | Activación reactiva de los paneles de Victoria y Derrota y vinculación limpia de botones de reinicio. |
 
 ### Modificaciones y adaptaciones
 
@@ -307,8 +309,14 @@ Se establece un estándar de formato de código unificado mediante .editorconfig
   * Implementación de `BuildManager.cs` bajo patrón Singleton para gestionar el plano de torre seleccionada (`TowerBlueprint`), validar costes con `EconomyManager` e instanciar defensas en el mapa.
   * Implementación de `TowerSlot.cs` para casillas de invocación interactivas mediante eventos de ratón (`OnMouseEnter`, `OnMouseExit`, `OnMouseDown`), con feedback visual dinámico según disponibilidad de oro y bloqueo de casillas ocupadas.
   * Conversión de `Tower_Basic` y `TowerSlot` en prefabs reutilizables dentro de `Assets/_Project/Prefabs/Combat/`.
+  * Implementación de `GameManager.cs` bajo patrón Singleton con máquina de estados (`Playing`, `Victory`, `Defeat`), conectado por eventos a `BaseHealth` y `WaveManager` para detectar el fin de partida y gestionar el reinicio limpio de la escena.
+  * Implementación de `GameEndUI.cs` para mostrar de forma reactiva los paneles de Victoria y Derrota y enlazar los botones de reinicio sin consultas en `Update`.
+  * Creación y configuración en `MainCanvas` de los paneles `Panel_Victory` y `Panel_Defeat` con bloqueo de raycast sobre el tablero de juego.
 * **Problemas surgidos:** Me ocurría un error por intentar entrar a una propiedad privada.
-* **Decisiones de diseño:** Se establece una fase de preparación temporal fija entre rondas para dar margen al jugador a recuperarse y planificar defensas antes de la siguiente oleada.Se ha implementado feedback cromático al pasar el cursor sobre cada casilla (verde si hay oro suficiente, rojo si falta oro) y bloqueo contra clics atravesando la interfaz de usuario (`IsPointerOverGameObject`).
+* **Decisiones de diseño:**
+  * Se establece una fase de preparación temporal fija entre rondas para dar margen al jugador a recuperarse y planificar defensas antes de la siguiente oleada.
+  * Se ha implementado feedback cromático al pasar el cursor sobre cada casilla (verde si hay oro suficiente, rojo si falta oro) y bloqueo contra clics atravesando la interfaz de usuario (`IsPointerOverGameObject`).
+  * Al alcanzarse la victoria o la derrota se pausa la simulación (`Time.timeScale = 0f`) y se bloquean los clics sobre las casillas del mapa, restableciendo la escala de tiempo de forma segura al reiniciar la escena.
 
 ### AAAA-MM-DD
 

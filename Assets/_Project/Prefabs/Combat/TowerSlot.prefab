@@ -155,4 +155,4 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5515209404671521299}
   hoverCanAffordColor: {r: 0.6, g: 1, b: 0.6, a: 1}
   hoverCannotAffordColor: {r: 1, g: 0.5, b: 0.5, a: 1}
-  buildOffset: {x: 0, y: 0.423, z: 0}
+  buildOffset: {x: 0.05, y: 0.6, z: 0}
