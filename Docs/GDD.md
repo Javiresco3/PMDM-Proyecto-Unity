@@ -208,7 +208,7 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 | `EnemySpawner.cs` | Temporizador de spawn a intervalos fijos, instanciación tipada de prefabs e inyección de la ruta en tiempo de ejecución. |
 | `BaseHealth.cs` | Singleton del Monolito, gestión del daño recibido y disparo de eventos de fin de partida (`Action`). |
 | `BaseHealthUI.cs` | Suscripción a eventos de salud para actualización reactiva del texto TextMeshPro sin sobrecargar el bucle `Update`. |
-| `Tower.cs` | Detección perimetral de enemigos en rango mediante `Physics2D.OverlapCircleNonAlloc` (sin asignación de memoria) y control de cadencia de disparo. |
+| `Tower.cs` | Detección perimetral de enemigos en rango mediante `Physics2D.OverlapCircle` con `ContactFilter2D` (sin asignación de memoria) y control de cadencia de disparo. |
 | `Projectile.cs` | Persecución rectilínea hacia el objetivo asignado y aplicación de daño al colisionar. |
 | `EnemyHealth.cs` | Control de puntos de vida del enemigo, recepción de impactos de proyectiles y destrucción controlada con eventos. |
 | `EnemyHealthBar.cs` | Vinculación reactiva del Slider de salud en espacio de mundo (*World Space*) mediante eventos desacoplados, sin llamadas en bucle `Update`. |
@@ -216,6 +216,8 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 | `EconomyUI.cs` | Refresco reactivo del contador de oro en la interfaz mediante eventos C#, sin sobrecarga de polling. |
 | `WaveManager.cs` | Control de flujo de rondas, estados de oleada, instanciación secuenciada por corrutinas y balance de enemigos activos. |
 | `WaveUI.cs` | Actualización basada en eventos del estado de oleadas, cuenta atrás y victoria en TextMeshPro. |
+| `BuildManager.cs` | Singleton gestor de invocación, validación de saldo económico e instanciación de torres sobre casillas disponibles. |
+| `TowerSlot.cs` | Control interactivo de casillas construibles mediante eventos de ratón, bloqueo de ocupación y retroalimentación visual de coste. |
 
 ### Modificaciones y adaptaciones
 
@@ -302,8 +304,11 @@ Se establece un estándar de formato de código unificado mediante .editorconfig
   * Definición de la clase serializable `Wave` para configurar individualmente tipo de enemigo, volumen por oleada y cadencia de spawn desde el Inspector.
   * Modificación de `EnemyHealth.cs` y `EnemyMovement.cs` para notificar al `WaveManager` la baja de enemigos activos tanto por combate como por llegada a la meta.
   * Implementación de `WaveUI.cs` para el refresco reactivo en TextMeshPro del número de oleada, cuenta atrás de descanso y fin de partida sin uso de `Update`.
+  * Implementación de `BuildManager.cs` bajo patrón Singleton para gestionar el plano de torre seleccionada (`TowerBlueprint`), validar costes con `EconomyManager` e instanciar defensas en el mapa.
+  * Implementación de `TowerSlot.cs` para casillas de invocación interactivas mediante eventos de ratón (`OnMouseEnter`, `OnMouseExit`, `OnMouseDown`), con feedback visual dinámico según disponibilidad de oro y bloqueo de casillas ocupadas.
+  * Conversión de `Tower_Basic` y `TowerSlot` en prefabs reutilizables dentro de `Assets/_Project/Prefabs/Combat/`.
 * **Problemas surgidos:** Me ocurría un error por intentar entrar a una propiedad privada.
-* **Decisiones de diseño:** Se establece una fase de preparación temporal fija entre rondas para dar margen al jugador a recuperarse y planificar defensas antes de la siguiente oleada.
+* **Decisiones de diseño:** Se establece una fase de preparación temporal fija entre rondas para dar margen al jugador a recuperarse y planificar defensas antes de la siguiente oleada.Se ha implementado feedback cromático al pasar el cursor sobre cada casilla (verde si hay oro suficiente, rojo si falta oro) y bloqueo contra clics atravesando la interfaz de usuario (`IsPointerOverGameObject`).
 
 ### AAAA-MM-DD
 
