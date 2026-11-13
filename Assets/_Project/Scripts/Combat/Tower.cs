@@ -9,23 +9,39 @@ public class Tower : MonoBehaviour
     [Header("Disparo")]
     [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float fireRate = 1f; // Disparos por segundo
+    [SerializeField] private float fireRate = 1f;
 
     private float fireCooldown = 0f;
     private Transform currentTarget;
     private readonly Collider2D[] hitBuffer = new Collider2D[10];
+    private ContactFilter2D enemyContactFilter;
+
+    private void Awake()
+    {
+        ConfigureContactFilter();
+    }
+
+    private void OnValidate()
+    {
+        ConfigureContactFilter();
+    }
+
+    private void ConfigureContactFilter()
+    {
+        enemyContactFilter = new ContactFilter2D();
+        enemyContactFilter.SetLayerMask(enemyLayer);
+        enemyContactFilter.useTriggers = true;
+    }
 
     private void Update()
     {
         fireCooldown -= Time.deltaTime;
 
-        // Si no tiene objetivo o el actual se salió del rango, busca uno nuevo
-        if (currentTarget == null || !IsTargetInRange(currentTarget))
+        if (currentTarget == null || !currentTarget.gameObject.activeInHierarchy || !IsTargetInRange(currentTarget))
         {
             currentTarget = FindTarget();
         }
 
-        // Disparo
         if (currentTarget != null && fireCooldown <= 0f)
         {
             Shoot();
@@ -35,8 +51,8 @@ public class Tower : MonoBehaviour
 
     private Transform FindTarget()
     {
-        // Detección eficiente en memoria sin instanciar listas
-        int hitCount = Physics2D.OverlapCircleNonAlloc(transform.position, attackRange, hitBuffer, enemyLayer);
+        // Sobrecarga sin asignación de memoria (reemplaza al obsoleto OverlapCircleNonAlloc)
+        int hitCount = Physics2D.OverlapCircle(transform.position, attackRange, enemyContactFilter, hitBuffer);
 
         if (hitCount == 0)
         {
@@ -89,5 +105,11 @@ public class Tower : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        if (currentTarget != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, currentTarget.position);
+        }
     }
 }

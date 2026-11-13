@@ -214,6 +214,8 @@ En el Nivel 1 se introduce un panel interactivo visible a la derecha con las tec
 | `EnemyHealthBar.cs` | Vinculación reactiva del Slider de salud en espacio de mundo (*World Space*) mediante eventos desacoplados, sin llamadas en bucle `Update`. |
 | `EconomyManager.cs` | Gestión centralizada de recursos (oro), validación de transacciones y disparo de eventos de saldo. |
 | `EconomyUI.cs` | Refresco reactivo del contador de oro en la interfaz mediante eventos C#, sin sobrecarga de polling. |
+| `WaveManager.cs` | Control de flujo de rondas, estados de oleada, instanciación secuenciada por corrutinas y balance de enemigos activos. |
+| `WaveUI.cs` | Actualización basada en eventos del estado de oleadas, cuenta atrás y victoria en TextMeshPro. |
 
 ### Modificaciones y adaptaciones
 
@@ -292,6 +294,16 @@ Se establece un estándar de formato de código unificado mediante .editorconfig
   * Implementación de `EconomyUI.cs` vinculado a TextMeshPro en el Canvas para la actualización reactiva del contador de oro en base a eventos, sin sobrecarga en `Update`.
 * **Problemas surgidos:** Dificultad con la barra de vida para que apareciese como quería.
 * **Decisiones de diseño:** Los enemigos no otorgan oro al alcanzar el Monolito, únicamente al ser destruidos por las defensas.
+
+### 2026-11-13
+
+* **Qué se ha hecho:**
+  * Implementación de `WaveManager.cs` bajo patrón Singleton para el control secuencial de oleadas, gestión de intervalos de descanso (`timeBetweenWaves`) y máquina de estados (`WaveState`).
+  * Definición de la clase serializable `Wave` para configurar individualmente tipo de enemigo, volumen por oleada y cadencia de spawn desde el Inspector.
+  * Modificación de `EnemyHealth.cs` y `EnemyMovement.cs` para notificar al `WaveManager` la baja de enemigos activos tanto por combate como por llegada a la meta.
+  * Implementación de `WaveUI.cs` para el refresco reactivo en TextMeshPro del número de oleada, cuenta atrás de descanso y fin de partida sin uso de `Update`.
+* **Problemas surgidos:** Me ocurría un error por intentar entrar a una propiedad privada.
+* **Decisiones de diseño:** Se establece una fase de preparación temporal fija entre rondas para dar margen al jugador a recuperarse y planificar defensas antes de la siguiente oleada.
 
 ### AAAA-MM-DD
 

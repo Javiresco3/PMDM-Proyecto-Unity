@@ -89,12 +89,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void ReachEnd()
     {
-        // Comprobación explícita de null sin operador '?' (cumple AGENTS.md)
+        // Justo cuando llega al final del trayecto:
         if (BaseHealth.Instance != null)
         {
             BaseHealth.Instance.TakeDamage(damageToBase);
         }
 
+        if (WaveManager.Instance != null)
+        {
+            WaveManager.Instance.OnEnemyDefeated();
+        }
         Destroy(gameObject);
     }
 

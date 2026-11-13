@@ -36,17 +36,21 @@ public class EnemyHealth : MonoBehaviour
     }
 
     private void Die()
-    {
-        OnDeath?.Invoke();
-
-        // Comprobación explícita de nulidad sin operador '?.' (cumple con AGENTS.md)
-        if (EconomyManager.Instance != null)
         {
-            EconomyManager.Instance.AddGold(goldReward);
-        }
+            OnDeath?.Invoke();
 
-        Destroy(gameObject);
-    }
+            if (EconomyManager.Instance != null)
+            {
+                EconomyManager.Instance.AddGold(goldReward);
+            }
+
+            if (WaveManager.Instance != null)
+            {
+                WaveManager.Instance.OnEnemyDefeated();
+            }
+
+            Destroy(gameObject);
+        }
 
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
